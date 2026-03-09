@@ -1,0 +1,33 @@
+iname: Auto Create PR
+
+on:
+  push:
+    branches-ignore:
+      - main
+      - master
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  create-pull-request:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          base: main
+          branch: ${{ github.ref_name }}
+          title: "Auto PR: ${{ github.ref_name }} -> main"
+          body: |
+            This PR was automatically created by GitHub Actions.
+
+            Source branch: `${{ github.ref_name }}`
+            Trigger: Push event
+          draft: false

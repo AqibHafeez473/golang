@@ -13,9 +13,4 @@ func main() {
 	fmt.Scanln(&age)
 
 	fmt.Printf("Hello %s, you are %d years old and Go is ready! 🚀\n", name, age)
-<<<<<<< HEAD
-}	
-=======
-fmt.Println("Welcome to the world of Go programming! 🌟")
 }
->>>>>>> 4284515 (feat:userinput)
