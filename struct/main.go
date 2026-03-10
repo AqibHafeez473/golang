@@ -8,6 +8,14 @@ import (
 // Student struct banaya
 // Ye ek real-world object ko represent karta hai
 // Har student ke paas name, roll number aur marks honge
+// type Student struct {
+// 	Name   string // student ka name
+// 	RollNo int    // roll number
+// 	Marks  int    // obtained marks
+// }
+
+
+
 type Student struct {
 	Name   string // student ka name
 	RollNo int    // roll number
